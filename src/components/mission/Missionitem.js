@@ -1,5 +1,6 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
-/* eslint linebreak-style: ["error", "windows"] */
+
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
