@@ -1,0 +1,9 @@
+.idea
+test.md
+*.rar
+*.zip
+*.rar
+*.log
+*.iso
+*.vscode
+node_modules/
