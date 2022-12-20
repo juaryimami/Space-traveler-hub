@@ -1,0 +1,8 @@
+.nav-link {
+  text-decoration: none;
+  color: blue !important;
+}
+
+.active_item {
+  border-bottom: 2px solid blue;
+}

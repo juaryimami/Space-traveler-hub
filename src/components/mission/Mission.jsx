@@ -1,10 +1,10 @@
 /* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 
-function RocketCard() {
+function Mission() {
   return (
-    <div>RocketCard</div>
+    <div>Mission</div>
   );
 }
 
-export default RocketCard;
+export default Mission;
