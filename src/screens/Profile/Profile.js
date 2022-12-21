@@ -1,9 +1,15 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Button } from 'react-bootstrap';
+import fetchMission from '../../redux/missions/missions';
 import styles from './profile.module.css';
+import { cancelMission } from '../../redux/missions/missionSlice';
 
 function Profile() {
-  const missions = useSelector((state) => state.mission);
+  const dispatch = useDispatch();
+  const { missions, status } = useSelector((state) => state.mission);
   const rockets = useSelector((state) => state.rockets);
 
   const arr = missions.filter((mission) => mission.reserved);
@@ -17,6 +23,16 @@ function Profile() {
     border: rocketsReserved.length === 0 ? 'none' : '1px solid #e3e3e3',
   };
 
+  useEffect(() => {
+    if (!status) {
+      dispatch(fetchMission());
+    }
+  }, []);
+
+  const cancelClick = (id) => {
+    dispatch(cancelMission(id));
+  };
+
   return (
     <div className={styles.profile_container}>
       <div className={styles.mission_container}>
@@ -24,9 +40,15 @@ function Profile() {
         {/* display no missions joined when array is empty */}
         {arr.length === 0 && <p>No missions joined yet...</p>}
         <div style={styling}>
-          {arr.map((name) => (
-            <div className={styles.specific_mission} key={name.id}>
-              <span>{name.name}</span>
+          {arr.map((item) => (
+            <div className={styles.specific_mission} key={item.mission_id}>
+              <Row>
+                <Col>{item.mission_name}</Col>
+                <Col>
+                  <Button variant="outline-primary" href={item.url} target="_blank">Read More</Button>
+                  <Button variant="outline-danger" className="mt-2" onClick={() => cancelClick(item.mission_id)}>Leave Mission</Button>
+                </Col>
+              </Row>
             </div>
           ))}
         </div>
