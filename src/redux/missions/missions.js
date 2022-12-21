@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const GET_MISSIONS = 'space-travelers-hub/missions/GET_MISSIONS';
 const JOIN_MISSION = 'space-travelers-hub/missions/JOIN_MISSION';
 const LEAVE_MISSION = 'space-travelers-hub/missions/LEAVE_MISSION';
@@ -58,3 +59,14 @@ const missionsReducer = (state = initialState, action) => {
 };
 
 export default missionsReducer;
+=======
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
+const URL = 'https://api.spacexdata.com/v3/missions';
+
+export default createAsyncThunk('fetch/missions', async () => {
+  const response = await fetch(URL);
+  const data = await response.json();
+  return data;
+});
+>>>>>>> 0f27a82303552d4edf3d36dd270be7ab7cebe515
