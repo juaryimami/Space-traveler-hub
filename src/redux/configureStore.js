@@ -1,9 +1,16 @@
-/* eslint-disable import/prefer-default-export */
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
 import missionReducer from './missions/missionSlice';
+import rocketsReducer from './rockets/rockets';
 
-export const store = configureStore({
-  reducer: {
-    mission: missionReducer,
-  },
+const reducer = combineReducers({
+  mission: missionReducer,
+  rockets: rocketsReducer,
 });
+
+const store = configureStore({
+  reducer,
+  middleware: [thunk],
+});
+
+export default store;
