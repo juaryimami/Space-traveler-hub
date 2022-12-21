@@ -34,10 +34,18 @@ To get a local copy up and running follow these simple example steps.
 
 Assuming you have git and node.js installed on your computer, please follow the steps below: 
 
-- Clone the repository using the following command: `git clone https://github.com/juaryimami/Space-traveler-hub.git`
+- Clone the repository using the following command:
+
+     git clone https://github.com/juaryimami/Space-traveler-hub.git
+
 - Navigate to that folder in the command line using the `cd` command.
-- Run the following command to install the necessary packages: `npm install`. 
-- Run the following command to view the project in the browser: `npm run start`. 
+- Run the following command to install the necessary packages: 
+   
+     npm install 
+
+- Run the following command to view the project in the browser: 
+
+     npm run start 
 
 ## Authors
 
