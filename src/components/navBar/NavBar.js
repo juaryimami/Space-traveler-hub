@@ -26,7 +26,7 @@ function NavBar() {
         <li>
           <NavLink
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            className={styles.links}
+            className={styles.linkss}
             to="/missions"
           >
             {' '}

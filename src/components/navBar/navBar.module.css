@@ -29,6 +29,7 @@
   display: flex;
   margin-right: 4rem;
   width: 25%;
+  justify-content: center;
 }
 
 .links,
@@ -36,8 +37,4 @@
   text-decoration: none;
   color: #1680fe;
   padding-inline: 1.2rem;
-}
-
-.profilelinks {
-  border-left: 1px solid black;
 }
