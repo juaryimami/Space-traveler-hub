@@ -1,21 +1,18 @@
 import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
-import NavLink from './components/navBar/NavLink';
-import Mission from './components/mission/Mission';
-import RocketCard from './components/RocketCard/RocketCard';
-import Profile from './components/profile/Profile';
+import NavBar from './components/navBar/NavBar';
+import Rockets from './screens/Rockets/Rockets';
+import Profile from './screens/Profile/Profile';
+import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavLink />
+    <div className="app-wrapper">
+      <NavBar />
       <Routes>
-        <Route path="/" element={<RocketCard />} />
-        <Route path="/mission" element={<Mission />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="/" element={<Rockets />} />
+        <Route path="/myprofile" element={<Profile />} />
       </Routes>
-    </BrowserRouter>
-
+    </div>
   );
 }
 
