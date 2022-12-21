@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<tr>
+  <td>
+    Thaicom
+  </td>
+  <td>
+    testing
+  </td>
+  <td>
+    <span
+      className="badge bg-secondary"
+    >
+      Not A Member
+    </span>
+  </td>
+  <td>
+    <button
+      className="btn btn-outline-secondary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Join Mission
+    </button>
+  </td>
+</tr>
+`;

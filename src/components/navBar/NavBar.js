@@ -39,9 +39,9 @@ function NavBar() {
           <NavLink
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
             className={styles.profilelinks}
-            to="/myprofile"
+            to="/profile"
           >
-            My Profile
+            Profile
           </NavLink>
         </li>
       </ul>

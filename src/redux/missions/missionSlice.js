@@ -10,7 +10,22 @@ const initialState = {
 export const missionSlice = createSlice({
   name: 'mission',
   initialState,
-  reducers: {},
+  reducers: {
+    reservedMission: (state, action) => {
+      const newState = state.missions.map((mission) => {
+        if (mission.mission_id !== action.payload) { return mission; }
+        return { ...mission, reserved: true };
+      });
+      state.missions = [...newState];
+    },
+    cancelMission: (state, action) => {
+      const newState = state.missions.map((mission) => {
+        if (mission.mission_id !== action.payload) { return mission; }
+        return { ...mission, reserved: false };
+      });
+      state.missions = [...newState];
+    },
+  },
   extraReducers: {
     [fetchMission.pending]: (state) => {
       state.status = 'Loading';
@@ -26,6 +41,7 @@ export const missionSlice = createSlice({
           mission_id: data.mission_id,
           mission_name: data.mission_name,
           description: data.description,
+          url: data.wikipedia,
           reserved: false,
         });
       });
@@ -34,4 +50,5 @@ export const missionSlice = createSlice({
   },
 });
 
+export const { reservedMission, cancelMission } = missionSlice.actions;
 export default missionSlice.reducer;
