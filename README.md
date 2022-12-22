@@ -19,7 +19,7 @@
 
 ![screenshot](./public/Screenshot%20from%202022-12-21%2022-09-55.png)
 
-You can view a live demo of the project using this [link](.../..).
+You can view a live demo of the project using this [link](https://space-traveler.onrender.com).
 
 ## Getting Started
 
@@ -64,7 +64,7 @@ Feel free to check the [issues page](https://github.com/juaryimami/Space-travele
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give a ⭐️ if you like this project! Thank you
 
 ## 📝 License
 
