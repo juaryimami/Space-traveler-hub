@@ -19,7 +19,7 @@
 
 ![screenshot](./public/Screenshot%20from%202022-12-21%2022-09-55.png)
 
-You can view a live demo of the project using this [link](.../..).
+You can view a live demo of the project using this [link](https://space-traveler.onrender.com).
 
 ## Getting Started
 
