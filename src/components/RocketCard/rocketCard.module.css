@@ -1,0 +1,74 @@
+.rocketCardContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin: 1rem 5rem 2rem 5rem;
+}
+
+.rocketImg {
+  height: 250px;
+  width: 250px;
+}
+
+.rocketDetails {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.rocketTitle {
+  font-size: 30px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rocketDescription {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.reserveRocketBtn {
+  height: 2.5rem;
+  width: 13rem;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #1680fe;
+  color: white;
+  border-radius: 4px;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 2rem;
+}
+
+.reserveRocketBtn:hover {
+  cursor: pointer;
+  background-color: #1c4473;
+}
+
+.cancelRocketBtn {
+  height: 2.5rem;
+  width: 13rem;
+  font-size: 1.2rem;
+  background-color: #f9f9f9;
+  color: rgb(150 139 139);
+  border: 1px solid #cdbdbd;
+  border-radius: 4px;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 2rem;
+}
+
+.cancelRocketBtn:hover {
+  cursor: pointer;
+}
+
+.reservedBadge {
+  font-size: 13px;
+  font-weight: 500;
+  background-color: green;
+  padding: 3px 8px;
+  margin: 0 2px;
+  border-radius: 10px;
+  color: white;
+}

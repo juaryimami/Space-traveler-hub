@@ -1,0 +1,27 @@
+.profile_container {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.mission_container {
+  min-width: 40%;
+}
+
+.reserved_missions {
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  min-width: 40%;
+}
+
+.specific_mission {
+  border-bottom: 1px solid  #e3e3e3;
+  padding: 1.5rem;
+}
+
+.reservedRocket {
+  border-bottom: 1px solid  #e3e3e3;
+  padding: 1.5rem;
+  height: 1.2rem;
+  width: 33rem;
+}
