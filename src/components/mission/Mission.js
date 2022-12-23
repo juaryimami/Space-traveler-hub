@@ -5,11 +5,10 @@ import fetchMission from '../../redux/missions/missions';
 import MissionItem from './Missionitem';
 
 function Mission() {
-  const { missions, status } = useSelector((state) => state.mission);
+  const missions = useSelector((state) => state.mission);
   const dispatch = useDispatch();
-
   useEffect(() => {
-    if (!status) {
+    if (missions.length === 0) {
       dispatch(fetchMission());
     }
   }, []);
@@ -27,7 +26,7 @@ function Mission() {
         </thead>
         <tbody>
           {missions.map((item) => (
-            <MissionItem key={item.mission_id} item={item} />
+            <MissionItem key={item.id} item={item} />
           ))}
         </tbody>
       </Table>

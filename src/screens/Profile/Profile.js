@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button } from 'react-bootstrap';
-import fetchMission from '../../redux/missions/missions';
+import fetchMission, { cancelAction } from '../../redux/missions/missions';
 import styles from './profile.module.css';
-import { cancelMission } from '../../redux/missions/missionSlice';
 
 function Profile() {
   const dispatch = useDispatch();
-  const { missions, status } = useSelector((state) => state.mission);
+  const missions = useSelector((state) => state.mission);
   const rockets = useSelector((state) => state.rockets);
 
   const arr = missions.filter((mission) => mission.reserved);
@@ -24,13 +23,13 @@ function Profile() {
   };
 
   useEffect(() => {
-    if (!status) {
+    if (missions.length === 0) {
       dispatch(fetchMission());
     }
   }, []);
 
   const cancelClick = (id) => {
-    dispatch(cancelMission(id));
+    dispatch(cancelAction(id));
   };
 
   return (
@@ -41,12 +40,12 @@ function Profile() {
         {arr.length === 0 && <p>No missions joined yet...</p>}
         <div style={styling}>
           {arr.map((item) => (
-            <div className={styles.specific_mission} key={item.mission_id}>
+            <div className={styles.specific_mission} key={item.id}>
               <Row>
-                <Col>{item.mission_name}</Col>
+                <Col>{item.name}</Col>
                 <Col>
                   <Button variant="outline-primary" href={item.url} target="_blank">Read More</Button>
-                  <Button variant="outline-danger" className="mt-2" onClick={() => cancelClick(item.mission_id)}>Leave Mission</Button>
+                  <Button variant="outline-danger" className="mt-2" onClick={() => cancelClick(item.id)}>Leave Mission</Button>
                 </Col>
               </Row>
             </div>
